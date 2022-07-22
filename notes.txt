@@ -6,3 +6,16 @@ POST /projects
 
 # Unfavorite a favorited github open source project
 DELETE /projects/:id
+https://docs.docker.com/compose/compose-file/
+Class based OOP allow for user to persist outside data model so any database 
+The two parms the service class take are user_id and Repo_client 
+These are used in all subsequent operations within service.py
+This allows the repo_client data to be independent of RDMS choice as
+repo_client is a always a Repostiroy as defined in repostiry/__init__.py
+Simply create another adapter in Repostiroy to scale outside
+
+
+Endpoints 
+
+Using OpenIdconnect for JWT authentication validation 
+

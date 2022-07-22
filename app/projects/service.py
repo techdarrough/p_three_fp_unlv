@@ -13,6 +13,7 @@ class Service(object):
         if not user_id:
             raise Exception("Denied! No user ID has been provided!")
 
+    # call methods created in mongo.py find_all find create detele 
     def find_all_projects(self):
         projects = self.repo_client.find_all({'user_id': self.user_id})
         return [self.dump(project) for project in projects]
@@ -20,7 +21,7 @@ class Service(object):
     def find_project(self, repo_id):
         project = self.repo_client.find({'user_id': self.user_id, 'repo_id': repo_id})
         return self.dump(project)
-    
+    # use helper function to prep githubrepo data 
     def create_project_for(self, githubRepo):
         self.repo_client.create(self.prepare_project(githubRepo))
         return self.dump(githubRepo.data)
@@ -31,7 +32,7 @@ class Service(object):
     
     def dump(self, data):
         return ProjectSchema(exclude=['_id']).dump(data).data
-    #helper function to prep
+    #helper function to prep set user and data payload then returns it to the function
     def prepare_project(self, githubRepo):
         data = githubRepo.data
         data['user_id'] = self.user_id

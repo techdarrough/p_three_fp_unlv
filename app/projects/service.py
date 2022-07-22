@@ -6,7 +6,7 @@ from .schema import ProjectSchema
 # represented by GitHubSchema model(class...model class...class model)
 
 class Service(object):
-    def __init__(self, user_ud, repo_client=Repository(adapter=MongoRepository)):
+    def __init__(self, user_id, repo_client=Repository(adapter=MongoRepository)):
         self.repo_client = repo_client
         self.user_id = user_id 
 

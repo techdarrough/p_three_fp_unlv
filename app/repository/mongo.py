@@ -4,7 +4,7 @@ from pymongo import MongoClient
 COLLECTION_NAME = 'projects'
 
 
-class MogoRepository(object):
+class MongoRepository(object):
     def __init__(self):
         mongo_url = os.environ.get('MONGO_URL')
         self.db = MongoClient(mongo_url).projects

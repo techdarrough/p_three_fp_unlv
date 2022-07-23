@@ -1,2 +1,5 @@
 venv
 .okta.env
+__pycache__
+app/http/api/__pycache__
+*.pyc

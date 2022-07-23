@@ -2,7 +2,7 @@
 from flask_oidc import OpenIDConnect
 # import middleware dependants
 from flask import Flask, json, g, request
-from app import project
+# import methods from service
 from app.projects.service import Service as Project
 # app will be using GithubSchema from schema.py
 from app.projects.schema import GitHubRepoSchema

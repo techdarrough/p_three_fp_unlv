@@ -11,7 +11,7 @@ from flask_cors import CORS
 # oidc will validate jwt in every process
 app = Flask(__name__)
 app.config.update({
-    'OIDC)CLIENT_SECERT': './../../../../client_secerts.json',
+    'OIDC)CLIENT_SECERT': './../../../../client_secrets.json',
     'OIDC_RECOUCE_SERVER_ONLY': True
 })
 

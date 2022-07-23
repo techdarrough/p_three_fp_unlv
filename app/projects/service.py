@@ -1,5 +1,5 @@
 from ..repository import Repository
-from ..repository import MongoRepository
+from ..repository.mongo import MongoRepository
 from .schema import ProjectSchema
 
 # define a service class that can tranlaste the data from the incoming payload

@@ -9,10 +9,11 @@ from app.projects.schema import GitHubRepoSchema
 # cors for cross site scripting
 from flask_cors import CORS
 # oidc will validate jwt in every process
+
 app = Flask(__name__)
 app.config.update({
-    'OIDC)CLIENT_SECERT': './../../../../client_secrets.json',
-    'OIDC_RECOUCE_SERVER_ONLY': True
+    'OIDC_CLIENT_SECRETS': './client_secrets.json',
+    'OIDC_RESOURCE_SERVER_ONLY': True
 })
 
 oidc = OpenIDConnect(app)
@@ -57,7 +58,7 @@ def show(repo_id):
 # update with put
 
 
-@app.route("/projects/<int:repo_id>", methods=["PUT"])
+@app.route("/project/<int:repo_id>", methods=["PUT"])
 @oidc.accept_token(True)
 def update(repo_id):
     github_repo = GitHubRepoSchema().load(json.loads(request.data))
